@@ -1,9 +1,18 @@
-import type { NextPage } from "next";
+//Import next components
+import Link from "next/link";
 import Head from "next/head";
+//import data from strapi
+import { useQuery } from "urql";
+import { ONAS } from "../lib/query";
 
-//import components
-import Header from "../components/homePage/header/header";
-const Home: NextPage = () => {
+const Onas = () => {
+	//Fetch result from strapi
+	const [result] = useQuery({ query: ONAS });
+	const { data, fetching, error } = result;
+	if (fetching) return <p>Loading...</p>;
+	if (error) return <p>Oh no... {error.message}</p>;
+	const elements = data;
+
 	return (
 		<div>
 			<Head>
@@ -19,12 +28,11 @@ const Home: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 				<link rel='manifest' href='/manifest.json' />
 			</Head>
-
 			<main>
-				<Header />
+				<h1>O nas</h1>
 			</main>
 		</div>
 	);
 };
 
-export default Home;
+export default Onas;

@@ -33,4 +33,12 @@ a{
 p{
     line-height:150%
     }
+    main{
+      
+        padding-top: 84px;
+        min-height: 70vh;
+        @media (min-width: 950px) {
+            padding-top:122px;
+	}
+    }
 `;

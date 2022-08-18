@@ -11,7 +11,7 @@ const NavScreen = (props: {
 	return (
 		<NavigationScreen>
 			{props.navElements.map((element) => (
-				<Link key={element.name} href={`/${element.url}`}>
+				<Link key={element.name} href={element.url}>
 					{element.name}
 				</Link>
 			))}

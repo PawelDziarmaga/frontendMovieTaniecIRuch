@@ -26,11 +26,17 @@ query{
           Wspolprace{
             data{
               attributes{
-                formats{
+                formats
                   
-                }
+                
               }
-  }`;
+            }
+          }
+        }
+      }
+    }
+  }
+  `;
 export const ONAS = `
 query{
   onasAbout{
@@ -41,6 +47,8 @@ query{
           AkapitPierwszy
           AkapitDrugi
           AkapitTrzeci
+        }
+      }
          
   }
 }`;
@@ -79,5 +87,17 @@ query{
   
 }
        
+
+`;
+export const ZAJECIA = `
+query{
+  zajecia{
+    data{
+      attributes{
+        Naglowek
+      }
+    }
+  }
+  }     
 
 `;
