@@ -95,6 +95,29 @@ query{
     data{
       attributes{
         Naglowek
+        NaglowekTaniec
+        NaglowekRuch
+        AkapitTaniec
+        AkapitRuch
+        CzyWidoczne
+        TaniecIMG{
+          data{
+            attributes{
+              formats
+                
+              
+            }
+          }
+        }
+        RychIMG{
+          data{
+            attributes{
+              formats
+                
+              
+            }
+          }
+        }
       }
     }
   }

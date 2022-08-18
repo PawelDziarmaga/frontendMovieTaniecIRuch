@@ -26,13 +26,13 @@ export const AdressUl = styled.ul`
 		margin-bottom: 1.5vh;
 
 		span {
-			color: $font-blue-color;
+			color: var(--secondary);
 		}
 	}
 `;
 export const MapBox = styled.div`
 	padding: 5vh 2% 5vh 2%;
-	border-bottom: 5px solid $font-purple-color;
+	border-bottom: 5px solid var(--primary);
 
 	margin-bottom: 3vh;
 	h2 {
@@ -65,7 +65,7 @@ export const SocialMediaBox = styled.div`
 			span {
 				display: inline-block;
 				transform: translate(0, -10px);
-				color: $font-grey-color;
+				color: var(--fontGrey);
 			}
 		}
 	}
