@@ -1,14 +1,23 @@
 //Import next components
 import Link from "next/link";
-import Image from "next/image";
 //Import styled components
-import logo from "../../assets/LOGO-NAV.png";
 import { NavigationLogo } from "./nav.styles";
+//import data from strapi
+import { useQuery } from "urql";
+import { LOGO } from "../../lib/query";
 const NavLogo = () => {
+	//Fetch result from strapi
+	const [result] = useQuery({ query: LOGO });
+	const { data, fetching, error } = result;
+	if (fetching) return <p>Loading...</p>;
+	if (error) return <p>Oh no... {error.message}</p>;
+	const elements =
+		data.nawigacja.data.attributes.Logo.data.attributes.formats.thumbnail;
+	console.log(elements);
 	return (
 		<Link href={"/"}>
 			<NavigationLogo>
-				<Image src={logo} alt='logo' width={150} height={60} />
+				<img src={elements.url} alt={elements.name} />
 			</NavigationLogo>
 		</Link>
 	);

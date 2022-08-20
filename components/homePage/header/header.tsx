@@ -33,12 +33,14 @@ const Header = () => {
 				<ContainerBTN>
 					<Link href='/Onas'>
 						<BTN>
-							O nas <span>»</span>
+							<p>O nas</p>
+							<span>»</span>
 						</BTN>
 					</Link>
 					<Link href='https://app.fitssey.com/MOVI/frontoffice'>
 						<BTN>
-							Grafik <span>»</span>
+							<p>Grafik</p>
+							<span>»</span>
 						</BTN>
 					</Link>
 				</ContainerBTN>

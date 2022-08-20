@@ -14,7 +14,7 @@ const Zajecia = () => {
 	if (fetching) return <p>Loading...</p>;
 	if (error) return <p>Oh no... {error.message}</p>;
 	const elements = data.zajecia.data.attributes;
-	console.log(elements);
+
 	return (
 		<div>
 			<Head>
@@ -29,10 +29,19 @@ const Zajecia = () => {
 				/>
 				<link rel='icon' href='/favicon.ico' />
 				<link rel='manifest' href='/manifest.json' />
+				<link
+					rel='preconnect'
+					href='https://fonts.gstatic.com'
+					crossOrigin='anonymous'
+				/>
+				<link
+					href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap'
+					rel='stylesheet'
+				/>
 			</Head>
 			<main>
 				<ZajeciaContainer>
-					<Link href='/'>
+					<Link href='/zajecia/taniec'>
 						<TaniecContainer>
 							<Title>{elements.NaglowekTaniec}</Title>
 							<Box>
@@ -49,7 +58,7 @@ const Zajecia = () => {
 							</Box>
 						</TaniecContainer>
 					</Link>
-					<Link href='/'>
+					<Link href='/zajecia/ruch'>
 						<RuchContainer>
 							<Title>{elements.NaglowekRuch}</Title>
 							<Box>

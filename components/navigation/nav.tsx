@@ -2,12 +2,15 @@ import { useState } from "react";
 //Import next components
 import Link from "next/link";
 //Import styled components
-import { NavigationContainer, NavigationMobileContainer } from "./nav.styles";
+import { NavigationContainer } from "./nav.styles";
 //Import Elements
 import NavLogo from "./nav.logo";
 import NavScreen from "./nav.screen";
 import NavMobile from "./nav.mobile";
 import NavHamburgerBTN from "./nav.hamburgerButton";
+//framermotion - animation
+const { AnimatePresence } = require("framer-motion");
+
 const Nav = () => {
 	const [activeMobile, setActiveMobile] = useState(false);
 	const navElements = [
@@ -18,7 +21,7 @@ const Nav = () => {
 		{ name: "Kontakt", url: "/kontakt" },
 	];
 	return (
-		<NavigationMobileContainer>
+		<div>
 			<NavigationContainer>
 				<NavLogo />
 				<NavHamburgerBTN
@@ -27,8 +30,10 @@ const Nav = () => {
 				/>
 				<NavScreen navElements={navElements} />
 			</NavigationContainer>
-			{activeMobile ? <NavMobile navElements={navElements} /> : null}
-		</NavigationMobileContainer>
+			<AnimatePresence>
+				{activeMobile && <NavMobile navElements={navElements} />}
+			</AnimatePresence>
+		</div>
 	);
 };
 

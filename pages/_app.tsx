@@ -1,4 +1,6 @@
 import type { AppProps } from "next/app";
+//import context
+import { StateContext } from "../lib/context";
 //Import elements
 import Nav from "../components/navigation/nav";
 import Footer from "../components/footer/Footer";
@@ -13,12 +15,14 @@ const client = createClient({
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<Provider value={client}>
-			<Nav />
-			<Component {...pageProps} />
-			<Footer />
-			<GlobalStyle />
-		</Provider>
+		<StateContext>
+			<Provider value={client}>
+				<Nav />
+				<Component {...pageProps} />
+				<Footer />
+				<GlobalStyle />
+			</Provider>
+		</StateContext>
 	);
 }
 

@@ -72,6 +72,15 @@ query{
               }
             }
           }
+          Tlo{
+            data{
+              attributes{
+                name
+                url
+                formats
+              }
+            }
+          }
           Aktualnosci{
             data{
               attributes{
@@ -123,4 +132,61 @@ query{
   }
   }     
 
+`;
+export const TANIEC = `
+query{
+  taniecs{
+    data{
+      attributes{
+        Nazwa
+        Opis
+        Slug
+        Zdjecie{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+}     
+`;
+export const RUCH = `
+query{
+  ruches{
+    data{
+      attributes{
+        Nazwa
+        Opis
+        Slug
+        Zdjecie{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+}     
+`;
+export const LOGO = `
+query{
+  nawigacja{
+    data{
+      attributes{
+        Logo{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+  }    
 `;

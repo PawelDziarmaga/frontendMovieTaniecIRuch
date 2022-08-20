@@ -1,20 +1,15 @@
 import styled from "styled-components";
-export const NavigationMobileContainer = styled.nav``;
+//framermotion - animation
+const { motion } = require("framer-motion");
+
 export const NavigationContainer = styled.div`
 	z-index: 10;
 	padding: 10px 0;
 	position: fixed;
 	width: 100%;
-	font-size: 0.9em;
-
+	background-color: var(--background);
 	display: flex;
 	justify-content: space-evenly;
-
-	background-color: var(--background);
-	box-shadow: 0px 0px 2px #393e46;
-
-	transform: translateY(0);
-	transition: 1s;
 
 	@media (max-width: 1300px) {
 		padding: 10px 3%;
@@ -25,11 +20,19 @@ export const NavigationContainer = styled.div`
 	}
 `;
 export const NavigationLogo = styled.div`
-	place-self: center;
+	img {
+		height: 80px;
+		margin-top: 5px;
+		@media screen and (max-width: 950px) {
+			height: 50px;
+			margin-top: 0px;
+		}
+	}
 `;
 export const NavigationScreen = styled.div`
 	display: flex;
 	flex-wrap: nowrap;
+
 	@media (max-width: 950px) {
 		display: none;
 	}
@@ -42,31 +45,26 @@ export const NavigationScreen = styled.div`
 		line-height: 100px;
 
 		text-transform: uppercase;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		color: var(--fontGrey);
 
 		text-align: center;
 		text-decoration: none;
 
-		border-bottom: 2px solid transparent;
-		transition: border-bottom 0.5s;
+		transition: 0.2s;
+
 		@media (max-width: 1300px) {
-			font-size: 19px;
-		}
-		&:hover {
-			border-bottom: 3px solid $font-white-color;
+			font-size: 1.5rem;
 		}
 	}
 `;
-export const NavigationMobile = styled.div`
+export const NavigationMobile = styled(motion.div)`
 	z-index: 10;
-	top: 75px;
+	top: 80px;
 	position: fixed;
 	height: 100vh;
 	width: 100vw;
-	background-color: var(--backgroundColor);
-
-	transition: 0.2s 0.2s ease-in-out;
+	background-color: var(--background);
 
 	@media (min-width: 950px) {
 		display: none;
@@ -78,11 +76,13 @@ export const NavigationMobile = styled.div`
 		color: var(--fontGrey);
 
 		display: block;
-		line-height: 50px;
+		margin: 0 20%;
+		border-bottom: 1px solid var(--fontGrey);
+		line-height: 5rem;
 		text-decoration: none;
 		transition: 0.2s;
 		&:hover {
-			font-size: 1.1em;
+			font-size: 1.6em;
 		}
 	}
 `;

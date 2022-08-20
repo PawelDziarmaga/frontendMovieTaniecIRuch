@@ -48,7 +48,7 @@ export const Socials = styled.div`
 export const Logos = styled.div`
 	padding: 0.5rem 0.5rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
 	grid-gap: 1rem;
 	img {
 		width: 40%;

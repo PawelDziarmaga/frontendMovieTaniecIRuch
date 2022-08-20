@@ -1,11 +1,22 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-
+//import data from strapi
+import { useQuery } from "urql";
+import { RUCH } from "../../lib/query";
+//import style
+import styled from "styled-components";
 //import components
-import Header from "../components/homePage/header/header";
-import News from "../components/homePage/news/news";
-import Facebook from "../components/homePage/facebook/facebook";
-const Home: NextPage = () => {
+import Choice from "../../components/zajecia/choice";
+import General from "../../components/zajecia/general";
+import Information from "../../components/zajecia/information";
+
+const Onas = () => {
+	//Fetch result from strapi
+	const [result] = useQuery({ query: RUCH });
+	const { data, fetching, error } = result;
+	if (fetching) return <p>Loading...</p>;
+	if (error) return <p>Oh no... {error.message}</p>;
+	const elements = data.ruches.data;
+
 	return (
 		<div>
 			<Head>
@@ -20,25 +31,20 @@ const Home: NextPage = () => {
 				/>
 				<link rel='icon' href='/favicon.ico' />
 				<link rel='manifest' href='/manifest.json' />
-				<link rel='preconnect' href='https://fonts.googleapis.com' />
-				<link
-					rel='preconnect'
-					href='https://fonts.gstatic.com'
-					crossOrigin='anonymous'
-				/>
-				<link
-					href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap'
-					rel='stylesheet'
-				/>
 			</Head>
-
 			<main>
-				<Header />
-				<News />
-				<Facebook />
+				<Cntainer>
+					<General type={"taniec"} />
+					<Choice elements={elements} />
+					<Information elements={elements} />
+				</Cntainer>
 			</main>
 		</div>
 	);
 };
 
-export default Home;
+export default Onas;
+
+const Cntainer = styled.div`
+	margin: 0 10%;
+`;
