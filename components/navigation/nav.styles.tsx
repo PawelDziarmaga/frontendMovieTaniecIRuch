@@ -60,7 +60,7 @@ export const NavigationScreen = styled.div`
 `;
 export const NavigationMobile = styled(motion.div)`
 	z-index: 10;
-	top: 80px;
+	top: 70px;
 	position: fixed;
 	height: 100vh;
 	width: 100vw;

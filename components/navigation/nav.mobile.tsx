@@ -4,6 +4,7 @@ import Link from "next/link";
 import { NavigationMobile } from "./nav.styles";
 
 const NavMobile = (props: {
+	setActiveMobile: React.Dispatch<React.SetStateAction<boolean>>;
 	navElements: {
 		name: string;
 		url: string;
@@ -19,9 +20,11 @@ const NavMobile = (props: {
 				default: { ease: "linear" },
 			}}>
 			{props.navElements.map((element) => (
-				<Link key={element.name} href={element.url}>
-					{element.name}
-				</Link>
+				<div
+					key={element.name}
+					onClick={() => props.setActiveMobile(false)}>
+					<Link href={element.url}>{element.name}</Link>
+				</div>
 			))}
 		</NavigationMobile>
 	);

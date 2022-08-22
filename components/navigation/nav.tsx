@@ -31,7 +31,12 @@ const Nav = () => {
 				<NavScreen navElements={navElements} />
 			</NavigationContainer>
 			<AnimatePresence>
-				{activeMobile && <NavMobile navElements={navElements} />}
+				{activeMobile && (
+					<NavMobile
+						navElements={navElements}
+						setActiveMobile={setActiveMobile}
+					/>
+				)}
 			</AnimatePresence>
 		</div>
 	);

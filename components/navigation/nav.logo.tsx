@@ -13,7 +13,7 @@ const NavLogo = () => {
 	if (error) return <p>Oh no... {error.message}</p>;
 	const elements =
 		data.nawigacja.data.attributes.Logo.data.attributes.formats.thumbnail;
-	console.log(elements);
+
 	return (
 		<Link href={"/"}>
 			<NavigationLogo>
