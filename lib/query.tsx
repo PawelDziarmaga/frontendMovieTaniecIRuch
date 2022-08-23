@@ -140,6 +140,8 @@ query{
       attributes{
         Nazwa
         Opis
+        DodatkowyOpis
+        KoncowyOpis
         Slug
         Zdjecie{
           data{
@@ -160,6 +162,8 @@ query{
       attributes{
         Nazwa
         Opis
+        DodatkowyOpis
+        KoncowyOpis
         Slug
         Zdjecie{
           data{

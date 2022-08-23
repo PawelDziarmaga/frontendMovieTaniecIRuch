@@ -28,6 +28,10 @@ export const Socials = styled.div`
 	ul {
 		font-size: 15px;
 		min-width: 250px;
+		@media screen and (max-width: 300px) {
+			font-size: 10px;
+			min-width: 0;
+		}
 
 		li {
 			text-align: left;

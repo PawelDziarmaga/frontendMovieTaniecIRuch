@@ -172,4 +172,10 @@ export const Arrow = styled.div`
 
 	color: var(--fontWhite);
 	animation: ${arrowPuls} 0.8s ease infinite alternate;
+	@media screen and (max-width: 400px) {
+		font-size: 10vh;
+	}
+	@media screen and (max-width: 200px) {
+		font-size: 5vh;
+	}
 `;

@@ -51,7 +51,7 @@ export const ChoiceContainer = styled.div`
 
 	h3 {
 		font-size: 20px;
-		color: $font-grey-color;
+		color: var(--fontGrey);
 		@media screen and (max-width: 1000px) {
 			font-size: 15px;
 		}
@@ -65,5 +65,10 @@ export const ChoiceContainer = styled.div`
 		margin: 5px;
 
 		cursor: pointer;
+	}
+	.active {
+		h3 {
+			color: #ca2a67;
+		}
 	}
 `;

@@ -10,31 +10,28 @@ type PropsType = {
 const Choice = (props: PropsType) => {
 	const contextItems = useStateContext();
 
-	return (
-		<ChoiceContainer>
-			{props.elements.length ? (
-				props.elements.map(
-					(element: {
-						attributes: { Nazwa: string; Slug: string };
-					}) => (
-						<div
-							onClick={() =>
-								contextItems?.setActive(
-									element.attributes.Nazwa
-								)
-							}
-							key={element.attributes.Slug}>
-							<h3>{element.attributes.Nazwa}</h3>
-						</div>
-					)
-				)
-			) : (
-				<div>
-					<h3>Brak Elementów</h3>
+	let firstIMGElement = false;
+	const elements = props.elements.map(
+		(element: { attributes: { Nazwa: string; Slug: string } }) => {
+			const classes = firstIMGElement
+				? `category-elements ${element.attributes.Slug}`
+				: `category-elements ${element.attributes.Slug} active`;
+			firstIMGElement = true;
+			return (
+				<div
+					onClick={() => {
+						contextItems?.setActive(element.attributes.Slug);
+						contextItems?.handleClick(element.attributes.Slug);
+					}}
+					key={element.attributes.Slug}
+					className={classes}>
+					<h3>{element.attributes.Nazwa}</h3>
 				</div>
-			)}
-		</ChoiceContainer>
+			);
+		}
 	);
+
+	return <ChoiceContainer>{elements}</ChoiceContainer>;
 };
 
 export default Choice;

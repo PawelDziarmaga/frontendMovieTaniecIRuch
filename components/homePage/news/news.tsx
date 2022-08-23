@@ -80,7 +80,6 @@ const News = () => {
 	if (fetching) return <p>Loading...</p>;
 	if (error) return <p>Oh no... {error.message}</p>;
 	const elements = data.stronaGlowna.data.attributes;
-	//Choosing the first news
 
 	//Support for the change buttons
 	const manualClick = function (chosenElementClass: string) {
