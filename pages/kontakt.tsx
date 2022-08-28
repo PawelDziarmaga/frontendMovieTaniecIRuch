@@ -8,6 +8,7 @@ import { KONTAKT } from "../lib/query";
 import Adress from "../components/kontakt/Adress";
 import Map from "../components/kontakt/Map";
 import SocialMedia from "../components/kontakt/SocialMedia";
+import HeaderPages from "../components/headerPages/headerPages";
 
 const Kontakt = () => {
 	//Fetch result from strapi
@@ -23,6 +24,10 @@ const Kontakt = () => {
 				<title>MOVI taniec i ruch</title>
 			</Head>
 			<main>
+				<HeaderPages
+					title={elements.Naglowek}
+					img={elements.Tlo.data.attributes.formats.medium.url}
+				/>
 				<Adress elements={elements} />
 				<Map />
 				<SocialMedia elements={elements} />

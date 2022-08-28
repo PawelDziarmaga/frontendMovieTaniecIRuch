@@ -1,5 +1,7 @@
 //import strapi vomponents
 import Link from "next/link";
+//Import State
+import { useStateContext } from "../../../lib/context";
 //import data from strapi
 import { useQuery } from "urql";
 import { TANIEC } from "../../../lib/query";
@@ -7,6 +9,7 @@ import { TANIEC } from "../../../lib/query";
 import { Container, Element, BackGround, H1 } from "./taniecLista.styles";
 
 const TaniecLista = () => {
+	const contextItems = useStateContext();
 	//Fetch result from strapi
 	const [result] = useQuery({ query: TANIEC });
 	const { data, fetching, error } = result;
@@ -27,7 +30,11 @@ const TaniecLista = () => {
 			};
 		}) => {
 			return (
-				<div key={element.attributes.Slug}>
+				<div
+					key={element.attributes.Slug}
+					onClick={() => {
+						contextItems?.setActive(element.attributes.Slug);
+					}}>
 					<Link href='/zajecia/taniec'>
 						<Element>
 							<BackGround className='BackGround'></BackGround>

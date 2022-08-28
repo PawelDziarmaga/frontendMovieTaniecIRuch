@@ -23,12 +23,17 @@ query{
           SpolecznoscFacebook
           SpolecznoscInstagram
           SpolecznoscYoutube
+          Tlo{
+            data{
+              attributes{
+                formats              
+              }
+            }
+          }
           Wspolprace{
             data{
               attributes{
-                formats
-                  
-                
+                formats              
               }
             }
           }
@@ -47,6 +52,13 @@ query{
           AkapitPierwszy
           AkapitDrugi
           AkapitTrzeci
+          Tlo{
+            data{
+              attributes{
+                formats              
+              }
+            }
+          }
         }
       }
          
@@ -109,6 +121,13 @@ query{
         AkapitTaniec
         AkapitRuch
         CzyWidoczne
+        Tlo{
+          data{
+            attributes{
+              formats              
+            }
+          }
+        }
         TaniecIMG{
           data{
             attributes{

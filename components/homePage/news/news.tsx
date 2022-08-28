@@ -127,7 +127,14 @@ const News = () => {
 			return (
 				<Images
 					className={classes}
-					key={element.attributes.formats.small.name}>
+					key={element.attributes.formats.small.name}
+					initial={{ x: "100%" }}
+					animate={{ x: "0%" }}
+					exit={{ x: "100%" }}
+					transition={{
+						x: { duration: 0.3 },
+						default: { ease: "linear" },
+					}}>
 					<img
 						src={element.attributes.formats.small.url}
 						alt={element.attributes.formats.small.name}></img>

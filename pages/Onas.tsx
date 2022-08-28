@@ -2,7 +2,9 @@ import Head from "next/head";
 //import data from strapi
 import { useQuery } from "urql";
 import { ONAS } from "../lib/query";
-
+//import components
+import HeaderPages from "../components/headerPages/headerPages";
+//import styles
 import styled from "styled-components";
 
 const Onas = () => {
@@ -19,6 +21,10 @@ const Onas = () => {
 				<title>MOVI taniec i ruch</title>
 			</Head>
 			<main>
+				<HeaderPages
+					title={elements.Naglowek}
+					img={elements.Tlo.data.attributes.formats.medium.url}
+				/>
 				<AboutPage>
 					{elements.AkapitPierwszy ? (
 						<p>{elements.AkapitPierwszy}</p>

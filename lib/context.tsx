@@ -26,7 +26,7 @@ export const StateContext = (props: PropsWithChildren<{}>) => {
 		console.log(elements);
 		const chosenElement = document.getElementsByClassName(active);
 		console.log(chosenElement);
-		chosenElement[0].classList.add("active");
+		chosenElement[0]?.classList.add("active");
 	};
 
 	return (

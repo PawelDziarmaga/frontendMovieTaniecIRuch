@@ -10,6 +10,8 @@ type PropsType = {
 const Choice = (props: PropsType) => {
 	const contextItems = useStateContext();
 
+	console.log(contextItems?.active);
+
 	let firstIMGElement = false;
 	const elements = props.elements.map(
 		(element: { attributes: { Nazwa: string; Slug: string } }) => {
@@ -30,7 +32,7 @@ const Choice = (props: PropsType) => {
 			);
 		}
 	);
-
+	contextItems?.handleClick(contextItems?.active);
 	return <ChoiceContainer>{elements}</ChoiceContainer>;
 };
 

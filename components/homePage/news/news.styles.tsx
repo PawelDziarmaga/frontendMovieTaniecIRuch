@@ -1,4 +1,6 @@
 import styled from "styled-components";
+//framermotion - animation
+const { motion } = require("framer-motion");
 export const NewsStyle = styled.div`
 	position: relative;
 	height: 90vh;
@@ -48,7 +50,7 @@ export const Buttons = styled.button`
 	}
 `;
 export const NewsIMGContainer = styled.div``;
-export const Images = styled.div`
+export const Images = styled(motion.div)`
 	padding: 0 auto;
 	display: none;
 	&.active {

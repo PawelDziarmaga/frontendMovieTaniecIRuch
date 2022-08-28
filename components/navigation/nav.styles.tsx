@@ -18,6 +18,10 @@ export const NavigationContainer = styled.div`
 	@media (max-width: 250px) {
 		padding: 10px 0%;
 	}
+	transition: 1s;
+	&.visible-nav {
+		transform: translateY(-150px);
+	}
 `;
 export const NavigationLogo = styled.div`
 	img {

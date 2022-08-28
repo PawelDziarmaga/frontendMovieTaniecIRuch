@@ -6,6 +6,7 @@ function NavHamburgerBTN(props: {
 }) {
 	return (
 		<NavigationHamburgerBTN
+			className='nav__hamburger'
 			active={props.activeMobile}
 			onClick={() => props.setActiveMobile((prev: boolean) => !prev)}>
 			<span></span>

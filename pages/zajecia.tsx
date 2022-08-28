@@ -4,7 +4,8 @@ import Head from "next/head";
 //import data from strapi
 import { useQuery } from "urql";
 import { ZAJECIA } from "../lib/query";
-
+//import components
+import HeaderPages from "../components/headerPages/headerPages";
 import styled from "styled-components";
 
 function Zajecia() {
@@ -21,6 +22,10 @@ function Zajecia() {
 				<title>MOVI taniec i ruch</title>
 			</Head>
 			<main>
+				<HeaderPages
+					title={elements.Naglowek}
+					img={elements.Tlo.data.attributes.formats.medium.url}
+				/>
 				<ZajeciaContainer>
 					<Link href='/zajecia/taniec'>
 						<TaniecContainer>
