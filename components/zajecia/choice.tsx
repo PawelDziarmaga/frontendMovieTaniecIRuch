@@ -1,4 +1,5 @@
 //Import State
+import { useEffect } from "react";
 import { useStateContext } from "../../lib/context";
 //Import style
 import { ChoiceContainer } from "./zajecia.styles";
@@ -10,8 +11,7 @@ type PropsType = {
 const Choice = (props: PropsType) => {
 	const contextItems = useStateContext();
 
-	console.log(contextItems?.active);
-
+	contextItems?.handleClick(contextItems?.active);
 	let firstIMGElement = false;
 	const elements = props.elements.map(
 		(element: { attributes: { Nazwa: string; Slug: string } }) => {
@@ -32,7 +32,7 @@ const Choice = (props: PropsType) => {
 			);
 		}
 	);
-	contextItems?.handleClick(contextItems?.active);
+
 	return <ChoiceContainer>{elements}</ChoiceContainer>;
 };
 

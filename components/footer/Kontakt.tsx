@@ -1,13 +1,13 @@
 //import style
 import { Socials } from "./footer.styles";
 
-function Kontakt() {
+function Kontakt(props: { email: string; tel: string }) {
 	return (
 		<Socials>
 			<h1>Kontakt</h1>
 			<ul>
-				<li>email: info@movitanieciruch.pl</li>
-				<li>telefon: 576 606 566</li>
+				<li>email: {props.email}</li>
+				<li>telefon: {props.tel}</li>
 			</ul>
 		</Socials>
 	);

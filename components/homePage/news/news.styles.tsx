@@ -24,11 +24,17 @@ export const Container = styled.div`
 	background-color: $neutral-2;
 	height: 100%;
 	width: 100%;
+	display: flex;
+	justify-content: center;
 `;
 export const ButtonsContainer = styled.div`
 	margin: 3vh auto;
 	display: flex;
 	justify-content: center;
+	position: absolute;
+	bottom: 20px;
+	left: 50vw;
+	transform: translate(-50%, 0);
 `;
 
 export const Buttons = styled.button`
@@ -49,10 +55,18 @@ export const Buttons = styled.button`
 		border: 1px solid #a5134b;
 	}
 `;
-export const NewsIMGContainer = styled.div``;
+export const NewsIMGContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	position: absolute;
+	width: 100vw;
+`;
 export const Images = styled(motion.div)`
+	position: relative;
+
 	padding: 0 auto;
-	display: none;
+
 	&.active {
 		display: block;
 	}

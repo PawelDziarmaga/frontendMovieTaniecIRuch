@@ -37,6 +37,13 @@ query{
               }
             }
           }
+          SocialMedia{
+            data{
+              attributes{
+                formats              
+              }
+            }
+          }
         }
       }
     }

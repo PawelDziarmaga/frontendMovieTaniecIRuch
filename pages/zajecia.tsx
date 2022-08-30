@@ -7,8 +7,10 @@ import { ZAJECIA } from "../lib/query";
 //import components
 import HeaderPages from "../components/headerPages/headerPages";
 import styled from "styled-components";
+import { useStateContext } from "../lib/context";
 
 function Zajecia() {
+	const contextItems = useStateContext();
 	//Fetch result from strapi
 	const [result] = useQuery({ query: ZAJECIA });
 	const { data, fetching, error } = result;
@@ -28,7 +30,10 @@ function Zajecia() {
 				/>
 				<ZajeciaContainer>
 					<Link href='/zajecia/taniec'>
-						<TaniecContainer>
+						<TaniecContainer
+							onClick={() => {
+								contextItems?.setActive("stretching");
+							}}>
 							<Title>{elements.NaglowekTaniec}</Title>
 							<Box>
 								<img
@@ -45,7 +50,10 @@ function Zajecia() {
 						</TaniecContainer>
 					</Link>
 					<Link href='/zajecia/ruch'>
-						<RuchContainer>
+						<RuchContainer
+							onClick={() => {
+								contextItems?.setActive("taniec-towarzyski");
+							}}>
 							<Title>{elements.NaglowekRuch}</Title>
 							<Box>
 								<p>
@@ -100,6 +108,11 @@ const TaniecContainer = styled.div`
 			margin: 0 auto 3vh auto;
 		}
 	}
+	span {
+		font-weight: bold;
+		color: #ca2a67;
+		transform: scale(1.2);
+	}
 `;
 const RuchContainer = styled.div`
 	h2 {
@@ -114,6 +127,11 @@ const RuchContainer = styled.div`
 		@media screen and (max-width: 500px) {
 			margin: 3vh auto 0 auto;
 		}
+	}
+	span {
+		font-weight: bold;
+		color: #ca2a67;
+		transform: scale(1.2);
 	}
 `;
 const Title = styled.h2`

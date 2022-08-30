@@ -5,6 +5,13 @@ type PropsType = {
 		SpolecznoscFacebook: string;
 		SpolecznoscInstagram: string;
 		SpolecznoscYoutube: string;
+		SocialMedia: {
+			data: {
+				attributes: {
+					formats: { small: { name: string; url: string } };
+				};
+			}[];
+		};
 	};
 };
 function SocialMedia(props: PropsType) {
@@ -13,24 +20,45 @@ function SocialMedia(props: PropsType) {
 			<h1>Społeczność</h1>
 			<ul>
 				<li>
-					<Link href={props.elements.SpolecznoscFacebook}>
-						<span>
+					<Link href='https://www.facebook.com/movi.chorzow'>
+						<div>
+							<img
+								src={
+									props.elements.SocialMedia.data[1]
+										.attributes.formats.small.url
+								}
+								alt=''
+							/>
 							<span>Facebook</span>
-						</span>
+						</div>
 					</Link>
 				</li>
 				<li>
-					<Link href={props.elements.SpolecznoscInstagram}>
-						<span>
+					<Link href='https://www.instagram.com/movi.tanieciruch'>
+						<div>
+							<img
+								src={
+									props.elements.SocialMedia.data[0]
+										.attributes.formats.small.url
+								}
+								alt=''
+							/>
 							<span>Instagram</span>
-						</span>
+						</div>
 					</Link>
 				</li>
 				<li>
-					<Link href={props.elements.SpolecznoscYoutube}>
-						<span>
+					<Link href='https://www.youtube.com/'>
+						<div>
+							<img
+								src={
+									props.elements.SocialMedia.data[2]
+										.attributes.formats.small.url
+								}
+								alt=''
+							/>
 							<span>Youtube</span>
-						</span>
+						</div>
 					</Link>
 				</li>
 			</ul>

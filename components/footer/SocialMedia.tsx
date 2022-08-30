@@ -2,30 +2,56 @@
 import Link from "next/link";
 import { Socials } from "./footer.styles";
 
-function SocialMedia() {
+function SocialMedia(props: {
+	fb: string;
+	instagram: string;
+	yt: string;
+	images: {
+		attributes: { formats: { small: { name: string; url: string } } };
+	}[];
+}) {
+	console.log(props.images[0]);
 	return (
 		<Socials>
 			<h1>Kontakt</h1>
 			<ul>
 				<li>
 					<Link href='https://www.facebook.com/movi.chorzow'>
-						<span>
+						<div>
+							<img
+								src={
+									props.images[1].attributes.formats.small.url
+								}
+								alt=''
+							/>
 							<span>Facebook</span>
-						</span>
+						</div>
 					</Link>
 				</li>
 				<li>
 					<Link href='https://www.instagram.com/movi.tanieciruch'>
-						<span>
+						<div>
+							<img
+								src={
+									props.images[0].attributes.formats.small.url
+								}
+								alt=''
+							/>
 							<span>Instagram</span>
-						</span>
+						</div>
 					</Link>
 				</li>
 				<li>
 					<Link href='https://www.youtube.com/'>
-						<span>
+						<div>
+							<img
+								src={
+									props.images[2].attributes.formats.small.url
+								}
+								alt=''
+							/>
 							<span>Youtube</span>
-						</span>
+						</div>
 					</Link>
 				</li>
 			</ul>

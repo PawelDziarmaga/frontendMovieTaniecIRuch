@@ -15,17 +15,15 @@ interface AppContextInterface {
 const ShopContext = createContext<AppContextInterface | null>(null);
 
 export const StateContext = (props: PropsWithChildren<{}>) => {
-	const [active, setActive] = useState("Stretching");
+	const [active, setActive] = useState("");
 
 	const handleClick = function (active: string) {
-		console.log(active);
 		const elements = document.getElementsByClassName("category-elements");
 		for (let i = 0; i < elements.length; i++) {
 			elements[i].classList.remove("active");
 		}
-		console.log(elements);
+
 		const chosenElement = document.getElementsByClassName(active);
-		console.log(chosenElement);
 		chosenElement[0]?.classList.add("active");
 	};
 

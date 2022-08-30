@@ -72,3 +72,49 @@ export const ChoiceContainer = styled.div`
 		}
 	}
 `;
+export const InformationContainer = styled.div`
+	margin-top: 1vh;
+	h1 {
+		margin: 2vh 10%;
+
+		border-bottom: 5px solid var(--primary);
+		display: inline;
+		@media screen and (max-width: 800px) {
+			margin: 1vh 5%;
+			font-size: 22px;
+		}
+		@media screen and (max-width: 500px) {
+			font-size: 18px;
+		}
+	}
+	p {
+		text-align: justify;
+		margin: 3vh 10%;
+
+		@media screen and (max-width: 800px) {
+			padding: 1vh 5%;
+		}
+		@media screen and (max-width: 500px) {
+			font-size: 12px;
+		}
+	}
+`;
+export const BTN = styled.div`
+	cursor: pointer;
+	text-align: center;
+	margin: 2vh auto;
+	width: 30%;
+	font-family: "Bebas Neue", cursive;
+
+	color: var(--fontWhite);
+	border: 0.5rem solid var(--primary);
+	background-color: var(--primary);
+
+	transition: 0.3s;
+
+	&:hover {
+		background-color: transparent;
+		color: var(--primary);
+		border: 0.5rem solid var(--primary);
+	}
+`;

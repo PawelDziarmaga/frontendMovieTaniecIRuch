@@ -1,8 +1,9 @@
-export const manualSwiper = function (move: string) {
+export const manualSwiper = function (props: {
+	move: string;
+	abc: React.Dispatch<React.SetStateAction<number>>;
+}) {
 	/********************* FIND ALL BUTTONS ************/
 	const btms = document.getElementsByClassName("news__navigation-btn");
-	/********************* FIND ALL SLIDES ************/
-	const slides = document.getElementsByClassName("news__slide");
 
 	/* DEFINE EMPTY ARRAY FOR SERCHING ACTIVE BUTTON ***/
 	let classes: any[] = [];
@@ -18,12 +19,11 @@ export const manualSwiper = function (move: string) {
 		/* x return index of active element*/
 
 		/* return active clases from all elements*/
-		for (let i = 0; i < slides.length; i++) {
-			slides[i].classList.remove("active");
+		for (let i = 0; i < btms.length; i++) {
 			btms[i].classList.remove("active");
 		}
 
-		if (move === "right") {
+		if (props.move === "right") {
 			if (x === 0) {
 				x = btms.length - 1;
 			} else {
@@ -37,7 +37,7 @@ export const manualSwiper = function (move: string) {
 			}
 		}
 
-		slides[x].classList.add("active");
 		btms[x].classList.add("active");
+		props.abc(x);
 	}
 };

@@ -50,14 +50,23 @@ export const Socials = styled.div`
 	}
 `;
 export const Logos = styled.div`
-	padding: 0.5rem 0.5rem;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
-	grid-gap: 1rem;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	justify-items: center;
+
+	grid-gap: 0rem;
 	img {
-		width: 40%;
+		padding: 3vh 3vw;
+		width: 15%;
 		display: flex;
 
 		place-self: center;
+		@media screen and (max-width: 1000px) {
+			width: 20%;
+		}
+		@media screen and (max-width: 500px) {
+			width: 30%;
+		}
 	}
 `;

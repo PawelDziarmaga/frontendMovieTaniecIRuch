@@ -1,7 +1,8 @@
 //Import State
+import Link from "next/link";
 import { useStateContext } from "../../lib/context";
 //Import style
-import { ChoiceContainer } from "./zajecia.styles";
+import { InformationContainer, BTN } from "./zajecia.styles";
 type PropsType = {
 	elements: {
 		attributes: {
@@ -19,36 +20,40 @@ const Information = (props: PropsType) => {
 		(element) => element.attributes.Slug === contextItems?.active
 	);
 	const chosenElement = x[0] ? (
-		<div>
+		<InformationContainer>
 			<h1>{x[0].attributes.Nazwa}</h1>
 			<p>{x[0].attributes.Opis ? x[0].attributes.Opis : null}</p>
-			<p>
-				{x[0].attributes.DodatkowyOpis
-					? x[0].attributes.DodatkowyOpis
-					: null}
-			</p>
-			<p>
-				{x[0].attributes.KoncowyOpis
-					? x[0].attributes.KoncowyOpis
-					: null}
-			</p>
-		</div>
+
+			{x[0].attributes.DodatkowyOpis ? (
+				<p>{x[0].attributes.DodatkowyOpis}</p>
+			) : null}
+
+			{x[0].attributes.KoncowyOpis ? (
+				<p>{x[0].attributes.KoncowyOpis}</p>
+			) : null}
+
+			<Link href='https://app.fitssey.com/MOVI/frontoffice'>
+				<BTN>Sprawdz grafik i zapisz się!</BTN>
+			</Link>
+		</InformationContainer>
 	) : null;
 	const startElement = (
-		<div>
+		<InformationContainer>
 			<h1>{props.elements[0].attributes.Nazwa}</h1>
 			<p>{props.elements[0].attributes.Opis}</p>
-			<p>
-				{props.elements[0].attributes.DodatkowyOpis
-					? props.elements[0].attributes.DodatkowyOpis
-					: null}
-			</p>
-			<p>
-				{props.elements[0].attributes.KoncowyOpis
-					? props.elements[0].attributes.KoncowyOpis
-					: null}
-			</p>
-		</div>
+
+			{props.elements[0].attributes.DodatkowyOpis ? (
+				<p>{props.elements[0].attributes.DodatkowyOpis}</p>
+			) : null}
+
+			{props.elements[0].attributes.KoncowyOpis ? (
+				<p>{props.elements[0].attributes.KoncowyOpis}</p>
+			) : null}
+
+			<Link href='https://app.fitssey.com/MOVI/frontoffice'>
+				<BTN>Sprawdz grafik i zapisz się!</BTN>
+			</Link>
+		</InformationContainer>
 	);
 
 	const components = x[0] ? chosenElement : startElement;
