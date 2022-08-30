@@ -18,7 +18,7 @@ const Footer = () => {
 	const [result] = useQuery({ query: KONTAKT });
 	const { data, fetching, error } = result;
 	if (fetching) return <p>Loading...</p>;
-	if (error) return <p>Oh no... {error.message}</p>;
+	if (error) return <p>Oh no... </p>;
 	const elements = data.kontakt.data.attributes;
 	return (
 		<FooterStyle>

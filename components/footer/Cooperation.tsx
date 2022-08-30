@@ -9,7 +9,7 @@ function Cooperation() {
 	const [result] = useQuery({ query: KONTAKT });
 	const { data, fetching, error } = result;
 	if (fetching) return <p>Loading...</p>;
-	if (error) return <p>Oh no... {error.message}</p>;
+	if (error) return <p>Oh no... </p>;
 	if (fetching) return <p>Loading...</p>;
 	const AplicationLogos = data.kontakt.data.attributes.Wspolprace;
 

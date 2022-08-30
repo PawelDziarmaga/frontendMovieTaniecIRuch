@@ -86,7 +86,7 @@ const News = () => {
 	const [result] = useQuery({ query: STRONA_GLOWNA });
 	const { data, fetching, error } = result;
 	if (fetching) return <p>Loading...</p>;
-	if (error) return <p>Oh no... {error.message}</p>;
+	if (error) return <p>Oh no... </p>;
 	const elements = data.stronaGlowna.data.attributes;
 
 	//Support for the change buttons

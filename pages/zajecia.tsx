@@ -15,7 +15,7 @@ function Zajecia() {
 	const [result] = useQuery({ query: ZAJECIA });
 	const { data, fetching, error } = result;
 	if (fetching) return <p>Loading...</p>;
-	if (error) return <p>Oh no... {error.message}</p>;
+	if (error) return <p>Oh no... </p>;
 	const elements = data.zajecia.data.attributes;
 
 	return (
