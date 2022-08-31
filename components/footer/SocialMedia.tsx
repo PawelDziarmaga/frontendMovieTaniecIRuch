@@ -10,7 +10,6 @@ function SocialMedia(props: {
 		attributes: { formats: { small: { name: string; url: string } } };
 	}[];
 }) {
-	console.log(props.images[0]);
 	return (
 		<Socials>
 			<h1>Kontakt</h1>
