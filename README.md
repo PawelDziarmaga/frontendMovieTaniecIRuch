@@ -38,5 +38,5 @@ To run this project, install it locally using npm:
 
 ```
 $ npm install
-$ npm run develop / npm run start
+$ npm run dev
 ```
