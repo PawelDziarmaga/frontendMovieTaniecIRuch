@@ -25,8 +25,6 @@ Project is created with:
 -   react: 18.2.0,
 -   styled-components: 5.3.5,
 -   framer-motion: 6.4.3,
--   react-hot-toast: 2.3.0,
--   react-icons": 4.4.0,
 
 ## Backend
 
